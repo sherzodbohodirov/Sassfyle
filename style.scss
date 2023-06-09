@@ -1,0 +1,136 @@
+$normal_text_size: 14px;
+$rangi_qora: #1d1d2c;
+$rangi_oq:#fff;
+$uzunlik: 30px;
+$kenglik: 30px;
+$yarimfoiz: 50%;
+$chiroylitext: sans-serif;
+$yoyilgan: space-around;
+$none: none;
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: $chiroylitext;
+}
+
+header{
+    height: 100vh;
+    background-image: url(../css/photo_2023-04-09_08-56-40.jpg);
+    background-size: cover;
+    background-position: top;
+}
+
+nav {
+    display: flex;
+    justify-content: $yoyilgan;
+    align-items: center;
+    min-height: 7vh;
+    background-color: $rangi_qora;
+}
+
+.logo {
+    color: $rangi_oq;
+    letter-spacing: 4px;
+    font-size: $normal_text_size;
+}
+
+.logo1 {
+    width: $kenglik;
+    display: flex;
+    justify-content: $yoyilgan;
+}
+
+.logo1 li {
+    list-style: $none;
+}
+
+.logo1 li a {
+    color: $rangi_oq;
+    text-decoration: $none;
+    letter-spacing: 3px;
+    font-size: $normal_text_size;
+}
+
+@media (max-width: 1024px) {
+    .logo1 {
+        width: $yarimfoiz;
+    }
+}
+
+.burger {
+    cursor: pointer;
+    display: $none;
+}
+
+.burger div {
+    height: 3px;
+    width: 25px;
+    margin: 5px;
+    background-color: $rangi_oq;
+    transition: transform 0.5s linear;
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .logo1 {
+        position: absolute;
+        right: 0;
+        height: 92vh;
+        top: 7vh;
+        background-color: $rangi_qora;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: $kenglik;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .logo1 li {
+        opacity: 0;
+    }
+
+    .burger {
+        display: block;
+    }
+}
+
+.activ {
+    transform: translate(0);
+}
+
+@keyframes navLinkMove {
+    from {
+        opacity: 0;
+        transform: translateX(70px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+
+
+.toggle .lin1 {
+    transform: rotate(-45deg)translate(-5px, 6px);
+}
+
+.toggle .lin2 {
+    opacity: 0;
+}
+
+.toggle .lin3 {
+    transform: rotate(45deg)translate(-5px, -6px);
+}
